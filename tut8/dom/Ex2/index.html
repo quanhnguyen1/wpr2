@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Converter </title>
+    <style>
+        select {
+        width: 150px;
+    }
+        input[type=button] {
+        width: 8%;
+        background:rgba(170, 81, 192, 0.623);
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        border-radius: 5px;
+    }
+        </style>
+    </head>
+    <body> 
+        <form action= "signup.php" method="POST"> 
+        Amount 
+        <input type ="number" id="Amount">
+        From Currency
+        <select name = "From-Currency">
+            <option value="VietNam"> VietNam </option>
+            <option value="USD"> USD</option>
+        </select>
+        To Currency
+        <select name = "To-Currency">
+            <option value="USD"> USD </option>
+            <option value="VietNam"> VietNam</option>
+        </select>
+        <input type="button" value="Convert">
+
+        <br>
+        Result: <span id="result"></span>
+        <script>
+        let Amount = document.getElementById('Amount');
+        let From_Currency = document.getElementById('From Currency');
+        let To_Currency = document.getElementById('To Currency');
+        let Convert = document.getElementById('Convert');
+        let result = document.getElementById('Result');
+
+        function getMoney() {
+        firstMoney = parseFloat(firstMoneyInput.value);
+        secondMoney = parseFloat(secondMoneyInput.value);
+        }
+
+        
+        </script>
+</body>
+</html>

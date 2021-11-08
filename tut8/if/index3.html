@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Document </title>
+  </head>
+  <body>
+    <h2> Tính điểm ĐH khối D </h2>
+    <form name ="calculation">
+        Môn Toán <input type="number" name ="math" id="math" placeholder= ""> <br> <br>
+        Môn Văn <input type="number" name ="literature" id="literature" placeholder= ""> <br> <br>
+        Môn Anh <input type="number" name ="english" id="english" placeholder= ""> <br> <br>
+        Khu Vực <input type="number" name ="place" id="place" placeholder= ""> <br> <br>
+        <input type="button" value="Tính điểm" onclick="calculate()">
+        <h2 id="result"></h2>
+
+    <script>
+    function calculate() {
+    var m = parseInt(document.forms["calculation"]["math"].value);
+    var l = parseInt(document.forms["calculation"]["literature"].value);
+    var e = parseInt(document.forms["calculation"]["english"].value);
+    var p = parseInt(document.forms["calculation"]["place"].value);
+    var result = m + l + e + p;
+    document.getElementById("result").innerText = "Tổng điểm: "+ result;
+    }
+</script>
+    </form>
+  </body>
+</html>

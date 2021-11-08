@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Document </title>
+  </head>
+  <body>
+        <div class="converter">
+        <input type="text" name ="input" id="input" placeholder= "Input"> <br>
+        <input type="text" name ="result" id="result" placeholder= "Result"> <br>
+    </div>
+    <script>
+    var input = document.getElementById('input');
+    var result = document.getElementById('result');
+    var inputType = document.getElementById('inputType');
+    var resultType = document.getElementById('resultType');
+    var inputTypeValue, resultTypeValue;
+
+    input.addEventLisstener("keyup", myResult);
+    inputType.addEventListener("change", myResult);
+    resultType.addEventListener("change", myResult);
+    inputTypeValue = inputType.value;
+    resultResultValue = resultType.value;
+
+    function myResult() {
+    inputTypeValue = inputType.value;
+    resultResultValue = resultType.value;
+
+   }
+
+</script>
+</form>
+  </body>
+</html>

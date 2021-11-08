@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Document </title>
+  </head>
+  <body>
+        <form name ="calculation">
+        <input type="number" name ="radius" id="radius" placeholder= "Circle radius">
+        <br> <input type="button" value="Result" onclick="calculate()">
+        <h2 id="perimeter"></h2>
+        <h2 id="area"></h2>
+
+    
+    <script>
+    function calculate(){
+    var r = parseInt(document.forms["calculation"]["radius"].value);
+    var perimeter = 2*3.14*r;
+    var area = 3.14*r*r;
+    document.getElementById("perimeter").innerText = "Perimeter of the circle is: "+ perimeter;
+    document.getElementById("area").innerText = "Area of the circle is: "+ area;
+    }
+    
+</script>
+</form>
+  </body>
+</html>

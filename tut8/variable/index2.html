@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Document </title>
+  </head>
+  <body>
+        <input type="number" name ="date" id="date" placeholder= "Date"> <br>
+        <input type="number" name ="month" id="month" placeholder= "Month"> <br>
+        <input type="number" name ="year" id="year" placeholder= "Year">
+        <br> <input type="button" value="Result" onclick="calculate()">
+    
+    <script>
+    function calculate(){
+    var d = new Date();
+    d.getDate();
+    d.getMonth();
+    d.getFullYear();
+    document.getElementById("date").innerHTML = date;
+    document.getElementById("month").innerHTML = month;
+    document.getElementById("year").innerHTML = year;
+        }
+</script>
+</form>
+  </body>
+</html>

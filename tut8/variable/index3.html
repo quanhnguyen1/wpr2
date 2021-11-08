@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Document </title>
+  </head>
+  <body>
+        <form name ="calculation">
+            <input type="number" name ="tiền" id="tiền" placeholder= "Số tiền vay (triệu đồng)"> <br>
+            <input type="number" name ="lãi" id="lãi" placeholder= "Lãi suất (%)"> <br>
+            <input type="number" name ="năm" id="năm" placeholder= "Số năm">
+        <br> <input type="button" value="Result" onclick="calculate()">    
+    <script>
+    function calculate(){
+    var t = parseInt(document.forms["calculation"]["tiền"].value);
+    var l = parseInt(document.forms["calculation"]["lãi"].value);
+    var n = parseInt(document.forms["calculation"]["năm"].value);
+    var result = t + n* (t*l);
+    document.getElementById("result").innerText = "Result: "+ result;
+    }
+    
+</script>
+</form>
+  </body>
+</html>
