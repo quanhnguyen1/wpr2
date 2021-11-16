@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>St Huxley's Community College</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+  </head>
+  <style>
+    * {
+    box-sizing: border-box;
+}
+.all {
+    width: 300px;
+    min-height: 300px;
+    background: burlywood;
+    margin: auto;
+}
+h1 {
+    color: teal;
+    text-align: center;
+}
+.arena {
+    width: 190px;
+    height: 190px;
+    background: white;
+    margin: auto;
+    position: relative;
+}
+.arena div {
+    width: 19px;
+    height: 19px;
+    position: absolute;
+    background-size: cover;
+}
+.arena #tank {
+    background: url('img/tanks.jpg');
+    /* background: url('img/explosion2.jpg'); */
+    background-size: cover;
+    top: 0px;
+    left: 0px;
+}
+.arena #boom {
+    background: url('img/boom.png');    
+    background-size: cover;
+}
+.Btn {
+    width: 95px;
+    height: 95px;
+    margin: auto;
+    position: relative;
+    background: yellowgreen;
+}
+button img {
+    width: 20px;
+    height: 20px;
+}
+.Btn #topBtn {            
+    position: absolute;
+    left: 30px;
+    transform: rotate(180deg);
+}
+.Btn #bottomBtn {            
+    position: absolute;
+    left: 30px;
+    bottom: 0px;
+}
+.Btn #leftBtn {            
+    position: absolute;
+    top: 32px;
+    left: -5px;
+    transform: rotate(90deg);
+}
+.Btn #rightBtn {            
+    position: absolute;
+    top: 32px;
+    right: -5px;
+    transform: rotate(270deg);
+}
+    </style>
+  <body>
+    <div class="all">
+        <h1>Game tank 2</h1>
+        <div class="arena">
+            <div id="tank"></div>
+            <div id="boom"></div>            
+        </div>
+        <div class="Btn">
+            <button id="topBtn"><img src="img/bottom.jpg" alt="TOP"></button>
+            <button id="bottomBtn"><img src="img/bottom.jpg" alt="BOTTOM"></button>
+            <button id="leftBtn"><img src="img/bottom.jpg" alt="LEFT"></button>
+            <button id="rightBtn"><img src="img/bottom.jpg" alt="RIGHT"></button>
+        </div>        
+    </div>
+            <script>
+            $(function () {
+            var x = y = 0;
+            let xBoom = Math.floor(Math.random() * 10) * 19;
+            let yBoom = Math.floor(Math.random() * 10) * 19;
+            let tank = $("#tank");
+            let boom = $("#boom");
+            boom.css({
+                "top": yBoom + "px",
+                "left": xBoom + "px"
+            })
+
+            function checkBoom() {
+                if (tank.css("top") == boom.css("top") &&
+                    tank.css("left") == boom.css("left")) {
+                    tank.css({
+                        "background": "url('img/explosion.png')",
+                        "border": "1px solid red",
+                        "width": "30px",
+                        "height": "30px"
+                    });
+                    boom.hide();
+                    setTimeout(restarGame, 1000)
+                }
+            }
+
+            function restarGame() {
+                location.reload()
+            }
+            $("#topBtn").click(function () {
+                if (y > 0) {
+                    y -= 19
+                } else y -= 0
+                $("#tank").css("top", y + "px")
+                checkBoom()
+            })
+            $("#bottomBtn").click(function () {
+                if (y < $(".arena").innerHeight()-$("#tank").outerHeight()) {
+                    y += 19
+                } else y += 0
+                $("#tank").css("top", y + "px")
+                checkBoom()
+            })
+            $("#leftBtn").click(function () {
+                if (x > 0) {
+                    x -= 19
+                } else x -= 0
+                $("#tank").css("left", x + "px")
+                checkBoom()
+            })
+            $("#rightBtn").click(function () {
+                if (x < $(".arena").innerWidth()-$("#tank").outerWidth()) {
+                    x += 19
+                } else x += 0
+                $("#tank").css("left", x + "px")
+                checkBoom()
+            })
+        })
+              </script>
+  </body>
+</html>
